@@ -78,95 +78,95 @@ R13
 !s100 G5PRj]N6lYeVclHbj>AE^3
 !i10b 1
 Eminute_counter
-Z20 w1712451581
+Z20 w1712883078
 R2
 R3
 R4
-R5
-Z21 8D:/305Lab3/minute_counter.vhd
-Z22 FD:/305Lab3/minute_counter.vhd
+Z21 dC:\Users\minti\Documents\GitHub\305Lab3\305Lab3
+Z22 8C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd
+Z23 FC:/Users/minti/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd
 l0
 L5
 VcZNXnJ5A2VOhl0zZ0K=9e0
+!s100 L6:F@c@^Ce]j<5lB>5DUl1
 R8
 32
-Z23 !s108 1712451655.958000
-Z24 !s90 -reportprogress|300|-work|work|D:/305Lab3/minute_counter.vhd|
-Z25 !s107 D:/305Lab3/minute_counter.vhd|
+!i10b 1
+Z24 !s108 1712883082.589000
+Z25 !s90 -reportprogress|300|-work|work|C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd|
+Z26 !s107 C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd|
 R12
 R13
-!s100 L6:F@c@^Ce]j<5lB>5DUl1
-!i10b 1
 Artl
 R2
 R3
 R4
-DEx4 work 14 minute_counter 0 22 cZNXnJ5A2VOhl0zZ0K=9e0
-l42
+Z27 DEx4 work 14 minute_counter 0 22 cZNXnJ5A2VOhl0zZ0K=9e0
+l43
 L16
-VmUFG3`Xh7VJ@ci8<N3PPa1
-!s100 Q[XfK@KIP5el1XTC]>8;41
+VE4SYI8@d:CMR[8=ImVN<I3
+!s100 CiDBdZO0UC_WEgbN>W:Lg3
 R8
 32
-R23
+!i10b 1
 R24
 R25
+R26
 R12
 R13
-!i10b 1
 Eminute_counter_tb
-Z26 w1712451763
+Z28 w1712881374
 R2
 R3
 R4
-R5
-Z27 8D:/305Lab3/test_minute_counter.vhd
-Z28 FD:/305Lab3/test_minute_counter.vhd
+R21
+Z29 8C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd
+Z30 FC:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd
 l0
 L5
 VVT=CPd81J^S`8dXdhcYjH0
-!s100 kZ?[G4BkYX_]H@9kBO@9;2
 R8
 32
-!i10b 1
-Z29 !s108 1712451768.436000
-Z30 !s90 -reportprogress|300|-work|work|D:/305Lab3/test_minute_counter.vhd|
-Z31 !s107 D:/305Lab3/test_minute_counter.vhd|
+Z31 !s108 1712881437.849000
+Z32 !s90 -reportprogress|300|-work|work|C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd|
+Z33 !s107 C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd|
 R12
 R13
+!s100 kZ?[G4BkYX_]H@9kBO@9;2
+!i10b 1
 Atb
 R2
 R3
 R4
-Z32 DEx4 work 17 minute_counter_tb 0 22 VT=CPd81J^S`8dXdhcYjH0
+DEx4 work 17 minute_counter_tb 0 22 VT=CPd81J^S`8dXdhcYjH0
 l29
 L8
-VW3V];5i82@>aULFzUh0In3
-!s100 Vj3a3mo5BT8X9USWi9LQz3
+VPBT4Jj;65l<53oob4oN520
 R8
 32
-!i10b 1
-R29
-R30
 R31
+R32
+R33
 R12
 R13
+!s100 07Zg@Z4h8N_khGfJ<jg`m2
+!i10b 1
 Etest_bcd_counter
-Z33 w1710985938
+Z34 w1710985938
 R2
 R3
 R4
 R5
-Z34 8D:/305Lab3/test_BCD_Counter.vhd
-Z35 FD:/305Lab3/test_BCD_Counter.vhd
+Z35 8D:/305Lab3/test_BCD_Counter.vhd
+Z36 FD:/305Lab3/test_BCD_Counter.vhd
 l0
 L5
 VfSef2gJI3cfjTRzY;i<e<0
 R8
 32
-Z36 !s108 1712447236.949000
-Z37 !s90 -reportprogress|300|-work|work|D:/305Lab3/test_BCD_Counter.vhd|
-Z38 !s107 D:/305Lab3/test_BCD_Counter.vhd|
+Z37 !s108 1712447236.949000
+Z38 !s90 -reportprogress|300|-work|work|D:/305Lab3/test_BCD_Counter.vhd|
+Z39 !s107 D:/305Lab3/test_BCD_Counter.vhd|
 R12
 R13
 !s100 dJcR>^YSINU>N?USihEMD3
@@ -181,9 +181,9 @@ L8
 V@oS;^OB9MG0CQfJoFWV^[0
 R8
 32
-R36
 R37
 R38
+R39
 R12
 R13
 !s100 F9:USeO38UiN;F?@Md?2H1
@@ -194,15 +194,15 @@ R2
 R3
 R4
 R5
-R27
-R28
+Z40 8D:/305Lab3/test_minute_counter.vhd
+Z41 FD:/305Lab3/test_minute_counter.vhd
 l0
 L5
 V:UF`W<RGHjF9U?:HMXC9l0
 R8
 32
-R30
-Z39 !s107 D:/305Lab3/test_minute_counter.vhd|
+Z42 !s90 -reportprogress|300|-work|work|D:/305Lab3/test_minute_counter.vhd|
+Z43 !s107 D:/305Lab3/test_minute_counter.vhd|
 R12
 R13
 !s108 1712448911.722000
@@ -218,8 +218,8 @@ L8
 ViKlaeXBJTRbR=gVBg0[L]3
 R8
 32
-R30
-R39
+R42
+R43
 R12
 R13
 w1712352400
