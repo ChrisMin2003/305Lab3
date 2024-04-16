@@ -88,13 +88,14 @@ begin
 
     process (clk)
     begin
-        if rising_edge(clk) then
-            if time_out_temp = data_in then
+        if time_out_temp = data_in then
               enable <= '0';
-              minute_enable <= '1';
-              tens_enable <= '1';
-              ones_enable <= '1';
-            elsif start = '1' then
+              minute_enable <= '0';
+              tens_enable <= '0';
+              ones_enable <= '0';
+	else    
+	if rising_edge(clk) then
+            if start = '1' then
                 enable <= '1';
                 minute_init <= '1';
                 tens_init   <= '1';
@@ -144,6 +145,7 @@ begin
                   end if;
                 end if;
               end if;
+	end if;
     end process;
             time_out <= minute_count(1 downto 0) & tens_count & ones_count;
             time_out_temp <= minute_count(1 downto 0) & tens_count & ones_count;
@@ -151,5 +153,3 @@ begin
             count_second <= Seg_tens & Seg_ones;
             
 end architecture rtl;
-
-

@@ -4,12 +4,13 @@ use ieee.numeric_std.all;
 
 entity minute_counter is
     port (
-        clk    : in std_logic;
-        start  : in std_logic;
-        data_in: in std_logic_vector (9 downto 0);
-        count_minute : out std_logic_vector(6 downto 0);
-        count_second : out std_logic_vector(13 downto 0);
-        time_out     : out std_logic_vector(9 downto 0)
+        CLOCK_50    : in std_logic;
+        KEY0  : in std_logic;
+        SW: in std_logic_vector (9 downto 0);
+        HEX2 : out std_logic_vector(6 downto 0);
+        HEX1 : out std_logic_vector(6 downto 0);
+		  HEX0 : out std_logic_vector(6 downto 0);
+        LEDR0     : out std_logic
     );
 end entity minute_counter;
 
@@ -43,7 +44,7 @@ architecture rtl of minute_counter is
 begin
     tens_counter : BCD_counter
     port map (
-        clk       => clk,
+        clk       => CLOCK_50,
         enable    => tens_enable,
         init      => tens_init,
         direction => tens_dir,
@@ -52,7 +53,7 @@ begin
 
     ones_counter : BCD_counter
     port map (
-        clk       => clk,
+        clk       => CLOCK_50,
         enable    => ones_enable,
         init      => ones_init,
         direction => ones_dir,
@@ -61,7 +62,7 @@ begin
     
     minute_counter : BCD_counter
     port map (
-        clk       => clk,
+        clk       => CLOCK_50,
         enable    => minute_enable,
         init      => minute_init,
         direction => minute_dir,
@@ -86,15 +87,17 @@ begin
         SevenSeg_out => Seg_ones
     );
 
-    process (clk)
+    process (CLOCK_50)
     begin
-        if rising_edge(clk) then
-            if time_out_temp = data_in then
+        if time_out_temp = SW then
               enable <= '0';
               minute_enable <= '0';
               tens_enable <= '0';
               ones_enable <= '0';
-            elsif start = '1' then
+				  LEDR0 <= '1';
+	else    
+	if rising_edge(CLOCK_50) then
+            if KEY0 = '1' then
                 enable <= '1';
                 minute_init <= '1';
                 tens_init   <= '1';
@@ -144,12 +147,11 @@ begin
                   end if;
                 end if;
               end if;
+	end if;
     end process;
-            time_out <= minute_count(1 downto 0) & tens_count & ones_count;
             time_out_temp <= minute_count(1 downto 0) & tens_count & ones_count;
-            count_minute <= Seg_minute;
-            count_second <= Seg_tens & Seg_ones;
+            HEX2 <= Seg_minute;
+            HEX1 <= Seg_tens;
+				HEX0 <= Seg_ones;
             
 end architecture rtl;
-
-

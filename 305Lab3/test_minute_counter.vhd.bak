@@ -52,7 +52,7 @@ begin
     begin
         -- Initialize start and data_in
         start <= '1';
-        data_in <= "0011001000";
+        data_in <= "1000000000";
 
         -- Wait for a few clock cycles
         wait for 100 ns;

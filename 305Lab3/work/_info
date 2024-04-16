@@ -78,7 +78,7 @@ R13
 !s100 G5PRj]N6lYeVclHbj>AE^3
 !i10b 1
 Eminute_counter
-Z20 w1712883078
+Z20 w1713226737
 R2
 R3
 R4
@@ -88,69 +88,69 @@ Z23 FC:/Users/minti/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd
 l0
 L5
 VcZNXnJ5A2VOhl0zZ0K=9e0
-!s100 L6:F@c@^Ce]j<5lB>5DUl1
 R8
 32
-!i10b 1
-Z24 !s108 1712883082.589000
+Z24 !s108 1713227453.479000
 Z25 !s90 -reportprogress|300|-work|work|C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd|
 Z26 !s107 C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd|
 R12
 R13
+!s100 L6:F@c@^Ce]j<5lB>5DUl1
+!i10b 1
 Artl
 R2
 R3
 R4
-Z27 DEx4 work 14 minute_counter 0 22 cZNXnJ5A2VOhl0zZ0K=9e0
+DEx4 work 14 minute_counter 0 22 cZNXnJ5A2VOhl0zZ0K=9e0
 l43
 L16
-VE4SYI8@d:CMR[8=ImVN<I3
-!s100 CiDBdZO0UC_WEgbN>W:Lg3
+VdT9QN7ZgU[H_Sg8>n6hFm1
+!s100 ld:hCondl1^7dKmc9ibJe1
 R8
 32
-!i10b 1
 R24
 R25
 R26
 R12
 R13
+!i10b 1
 Eminute_counter_tb
-Z28 w1712881374
+Z27 w1713227453
 R2
 R3
 R4
 R21
-Z29 8C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd
-Z30 FC:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd
+Z28 8C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd
+Z29 FC:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd
 l0
 L5
 VVT=CPd81J^S`8dXdhcYjH0
+!s100 kZ?[G4BkYX_]H@9kBO@9;2
 R8
 32
-Z31 !s108 1712881437.849000
-Z32 !s90 -reportprogress|300|-work|work|C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd|
-Z33 !s107 C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd|
+!i10b 1
+Z30 !s108 1713227453.816000
+Z31 !s90 -reportprogress|300|-work|work|C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd|
+Z32 !s107 C:/Users/minti/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd|
 R12
 R13
-!s100 kZ?[G4BkYX_]H@9kBO@9;2
-!i10b 1
 Atb
 R2
 R3
 R4
-DEx4 work 17 minute_counter_tb 0 22 VT=CPd81J^S`8dXdhcYjH0
+Z33 DEx4 work 17 minute_counter_tb 0 22 VT=CPd81J^S`8dXdhcYjH0
 l29
 L8
-VPBT4Jj;65l<53oob4oN520
+VmmfPa6T<JICjS[mmIA<Vk2
+!s100 52YRFSl668`MmPdlcR6iO3
 R8
 32
+!i10b 1
+R30
 R31
 R32
-R33
 R12
 R13
-!s100 07Zg@Z4h8N_khGfJ<jg`m2
-!i10b 1
 Etest_bcd_counter
 Z34 w1710985938
 R2

@@ -24,7 +24,7 @@ architecture tb of minute_counter_tb is
     signal count_second : std_logic_vector(13 downto 0);
     signal time_out     : std_logic_vector(9 downto 0);
 
-    constant clk_period : time := 10 ns; -- Clock period of 10 ns (100 MHz)
+    constant clk_period : time := 20 ns;
 
 begin
     -- Instantiate the minute_counter entity
@@ -60,12 +60,6 @@ begin
         -- Deassert start to begin counting
         start <= '0';
 
-        -- Wait for some time to observe the output
-        wait;
-
-        -- You can add more stimuli here to test different scenarios
-
-        -- End simulation
         wait;
     end process;
 end architecture tb;
