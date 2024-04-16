@@ -5,12 +5,12 @@ use ieee.numeric_std.all;
 entity minute_counter is
     port (
         CLOCK_50    : in std_logic;
-        KEY0  : in std_logic;
+        KEY  : in std_logic_vector (3 downto 0);
         SW: in std_logic_vector (9 downto 0);
         HEX2 : out std_logic_vector(6 downto 0);
         HEX1 : out std_logic_vector(6 downto 0);
 		  HEX0 : out std_logic_vector(6 downto 0);
-        LEDR0     : out std_logic
+        LEDR     : out std_logic_vector(9 downto 0)
     );
 end entity minute_counter;
 
@@ -94,10 +94,10 @@ begin
               minute_enable <= '0';
               tens_enable <= '0';
               ones_enable <= '0';
-				  LEDR0 <= '1';
+				  LEDR(0) <= '1';
 	else    
 	if rising_edge(CLOCK_50) then
-            if KEY0 = '1' then
+            if KEY(0) = '0' then
                 enable <= '1';
                 minute_init <= '1';
                 tens_init   <= '1';

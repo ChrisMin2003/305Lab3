@@ -8,21 +8,21 @@ end minute_counter_tb;
 architecture tb of minute_counter_tb is
     component minute_counter is
         port (
-            clk          : in std_logic;
-            start        : in std_logic;
-            data_in      : in std_logic_vector (9 downto 0);
-            count_minute : out std_logic_vector(6 downto 0);
-            count_second : out std_logic_vector(13 downto 0);
-            time_out     : out std_logic_vector(9 downto 0)
+        CLOCK_50    : in std_logic;
+        KEY0  : in std_logic;
+        SW: in std_logic_vector (9 downto 0);
+        HEX2 : out std_logic_vector(6 downto 0);
+        HEX1 : out std_logic_vector(6 downto 0);
+		  HEX0 : out std_logic_vector(6 downto 0);
+        LEDR0     : out std_logic
         );
     end component;
 
     signal clk          : std_logic := '0';
     signal start        : std_logic := '0';
     signal data_in      : std_logic_vector(9 downto 0) := (others => '0');
-    signal count_minute : std_logic_vector(6 downto 0);
-    signal count_second : std_logic_vector(13 downto 0);
-    signal time_out     : std_logic_vector(9 downto 0);
+    signal count_minute, count_second_tens, count_second_ones : std_logic_vector(6 downto 0);
+    signal time_out     : std_logic := '0';
 
     constant clk_period : time := 20 ns;
 
@@ -30,12 +30,13 @@ begin
     -- Instantiate the minute_counter entity
     uut : minute_counter
         port map (
-            clk          => clk,
-            start        => start,
-            data_in      => data_in,
-            count_minute => count_minute,
-            count_second => count_second,
-            time_out     => time_out
+            CLOCK_50          => clk,
+            KEY0        => start,
+            SW      => data_in,
+            HEX2 => count_minute,
+            HEX1 => count_second_tens,
+		HEX0 => count_second_ones,
+            LEDR0     => time_out
         );
 
     -- Clock process
