@@ -1,5 +1,5 @@
 Analysis & Synthesis report for minute_counter
-Thu Apr 18 11:47:51 2024
+Thu Apr 18 13:46:55 2024
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -13,12 +13,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -44,13 +46,13 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Apr 18 11:47:51 2024           ;
+; Analysis & Synthesis Status     ; Successful - Thu Apr 18 13:46:55 2024           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; minute_counter                                  ;
 ; Top-level Entity Name           ; minute_counter                                  ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 19                                              ;
+; Total registers                 ; 51                                              ;
 ; Total pins                      ; 46                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
@@ -184,25 +186,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 26             ;
+; Estimate of Logic utilization (ALMs needed) ; 60             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 45             ;
+; Combinational ALUT usage for logic          ; 110            ;
 ;     -- 7 input functions                    ; 0              ;
-;     -- 6 input functions                    ; 6              ;
-;     -- 5 input functions                    ; 9              ;
-;     -- 4 input functions                    ; 26             ;
-;     -- <=3 input functions                  ; 4              ;
+;     -- 6 input functions                    ; 10             ;
+;     -- 5 input functions                    ; 7              ;
+;     -- 4 input functions                    ; 33             ;
+;     -- <=3 input functions                  ; 60             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 19             ;
+; Dedicated logic registers                   ; 51             ;
 ;                                             ;                ;
 ; I/O pins                                    ; 46             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 19             ;
-; Total fan-out                               ; 318            ;
-; Average fan-out                             ; 2.04           ;
+; Maximum fan-out                             ; 51             ;
+; Total fan-out                               ; 586            ;
+; Average fan-out                             ; 2.32           ;
 +---------------------------------------------+----------------+
 
 
@@ -211,27 +213,111 @@ refer to the applicable agreement for further details.
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+-----------------+--------------+
 ; Compilation Hierarchy Node            ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name     ; Library Name ;
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+-----------------+--------------+
-; |minute_counter                       ; 45 (10)             ; 19 (7)                    ; 0                 ; 0          ; 46   ; 0            ; |minute_counter                                  ; BCD_counter     ; work         ;
-;    |BCD_counter:minute_counter|       ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_counter:minute_counter       ; BCD_counter     ; work         ;
-;    |BCD_counter:ones_counter|         ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_counter:ones_counter         ; BCD_counter     ; work         ;
-;    |BCD_counter:tens_counter|         ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_counter:tens_counter         ; BCD_counter     ; work         ;
+; |minute_counter                       ; 110 (32)            ; 51 (7)                    ; 0                 ; 0          ; 46   ; 0            ; |minute_counter                                  ; BCD_counter     ; work         ;
+;    |BCD_counter:minute_counter|       ; 44 (44)             ; 36 (36)                   ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_counter:minute_counter       ; BCD_counter     ; work         ;
+;    |BCD_counter:ones_counter|         ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_counter:ones_counter         ; BCD_counter     ; work         ;
+;    |BCD_counter:tens_counter|         ; 5 (5)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_counter:tens_counter         ; BCD_counter     ; work         ;
 ;    |BCD_to_SevenSeg:converter_minute| ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_to_SevenSeg:converter_minute ; BCD_to_SevenSeg ; work         ;
 ;    |BCD_to_SevenSeg:converter_ones|   ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_to_SevenSeg:converter_ones   ; BCD_to_SevenSeg ; work         ;
-;    |BCD_to_SevenSeg:converter_tens|   ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_to_SevenSeg:converter_tens   ; BCD_to_SevenSeg ; work         ;
+;    |BCD_to_SevenSeg:converter_tens|   ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |minute_counter|BCD_to_SevenSeg:converter_tens   ; BCD_to_SevenSeg ; work         ;
 +---------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+-----------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; ones_dir                              ; Merged with minute_dir                 ;
-; tens_dir                              ; Merged with minute_dir                 ;
-; minute_dir                            ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 3 ;                                        ;
-+---------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; data_in[0]                                          ; KEY[0]              ; yes                    ;
+; data_in[1]                                          ; KEY[0]              ; yes                    ;
+; data_in[2]                                          ; KEY[0]              ; yes                    ;
+; data_in[3]                                          ; KEY[0]              ; yes                    ;
+; data_in[4]                                          ; KEY[0]              ; yes                    ;
+; data_in[5]                                          ; KEY[0]              ; yes                    ;
+; data_in[6]                                          ; KEY[0]              ; yes                    ;
+; data_in[8]                                          ; KEY[0]              ; yes                    ;
+; data_in[9]                                          ; KEY[0]              ; yes                    ;
+; enable                                              ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 10  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                ;
++------------------------------------------+--------------------------------------------------------+
+; Register name                            ; Reason for Removal                                     ;
++------------------------------------------+--------------------------------------------------------+
+; minute_dir                               ; Stuck at GND due to stuck port data_in                 ;
+; tens_dir                                 ; Stuck at GND due to stuck port data_in                 ;
+; ones_dir                                 ; Stuck at GND due to stuck port data_in                 ;
+; BCD_counter:ones_counter|timer_delay[31] ; Merged with BCD_counter:minute_counter|timer_delay[31] ;
+; BCD_counter:tens_counter|timer_delay[31] ; Merged with BCD_counter:minute_counter|timer_delay[31] ;
+; BCD_counter:ones_counter|timer_delay[30] ; Merged with BCD_counter:minute_counter|timer_delay[30] ;
+; BCD_counter:tens_counter|timer_delay[30] ; Merged with BCD_counter:minute_counter|timer_delay[30] ;
+; BCD_counter:ones_counter|timer_delay[29] ; Merged with BCD_counter:minute_counter|timer_delay[29] ;
+; BCD_counter:tens_counter|timer_delay[29] ; Merged with BCD_counter:minute_counter|timer_delay[29] ;
+; BCD_counter:ones_counter|timer_delay[28] ; Merged with BCD_counter:minute_counter|timer_delay[28] ;
+; BCD_counter:tens_counter|timer_delay[28] ; Merged with BCD_counter:minute_counter|timer_delay[28] ;
+; BCD_counter:ones_counter|timer_delay[27] ; Merged with BCD_counter:minute_counter|timer_delay[27] ;
+; BCD_counter:tens_counter|timer_delay[27] ; Merged with BCD_counter:minute_counter|timer_delay[27] ;
+; BCD_counter:ones_counter|timer_delay[26] ; Merged with BCD_counter:minute_counter|timer_delay[26] ;
+; BCD_counter:tens_counter|timer_delay[26] ; Merged with BCD_counter:minute_counter|timer_delay[26] ;
+; BCD_counter:ones_counter|timer_delay[25] ; Merged with BCD_counter:minute_counter|timer_delay[25] ;
+; BCD_counter:tens_counter|timer_delay[25] ; Merged with BCD_counter:minute_counter|timer_delay[25] ;
+; BCD_counter:ones_counter|timer_delay[24] ; Merged with BCD_counter:minute_counter|timer_delay[24] ;
+; BCD_counter:tens_counter|timer_delay[24] ; Merged with BCD_counter:minute_counter|timer_delay[24] ;
+; BCD_counter:ones_counter|timer_delay[23] ; Merged with BCD_counter:minute_counter|timer_delay[23] ;
+; BCD_counter:tens_counter|timer_delay[23] ; Merged with BCD_counter:minute_counter|timer_delay[23] ;
+; BCD_counter:ones_counter|timer_delay[21] ; Merged with BCD_counter:minute_counter|timer_delay[21] ;
+; BCD_counter:tens_counter|timer_delay[21] ; Merged with BCD_counter:minute_counter|timer_delay[21] ;
+; BCD_counter:ones_counter|timer_delay[20] ; Merged with BCD_counter:minute_counter|timer_delay[20] ;
+; BCD_counter:tens_counter|timer_delay[20] ; Merged with BCD_counter:minute_counter|timer_delay[20] ;
+; BCD_counter:ones_counter|timer_delay[17] ; Merged with BCD_counter:minute_counter|timer_delay[17] ;
+; BCD_counter:tens_counter|timer_delay[17] ; Merged with BCD_counter:minute_counter|timer_delay[17] ;
+; BCD_counter:ones_counter|timer_delay[16] ; Merged with BCD_counter:minute_counter|timer_delay[16] ;
+; BCD_counter:tens_counter|timer_delay[16] ; Merged with BCD_counter:minute_counter|timer_delay[16] ;
+; BCD_counter:ones_counter|timer_delay[15] ; Merged with BCD_counter:minute_counter|timer_delay[15] ;
+; BCD_counter:tens_counter|timer_delay[15] ; Merged with BCD_counter:minute_counter|timer_delay[15] ;
+; BCD_counter:ones_counter|timer_delay[13] ; Merged with BCD_counter:minute_counter|timer_delay[13] ;
+; BCD_counter:tens_counter|timer_delay[13] ; Merged with BCD_counter:minute_counter|timer_delay[13] ;
+; BCD_counter:ones_counter|timer_delay[12] ; Merged with BCD_counter:minute_counter|timer_delay[12] ;
+; BCD_counter:tens_counter|timer_delay[12] ; Merged with BCD_counter:minute_counter|timer_delay[12] ;
+; BCD_counter:ones_counter|timer_delay[10] ; Merged with BCD_counter:minute_counter|timer_delay[10] ;
+; BCD_counter:tens_counter|timer_delay[10] ; Merged with BCD_counter:minute_counter|timer_delay[10] ;
+; BCD_counter:ones_counter|timer_delay[7]  ; Merged with BCD_counter:minute_counter|timer_delay[7]  ;
+; BCD_counter:tens_counter|timer_delay[7]  ; Merged with BCD_counter:minute_counter|timer_delay[7]  ;
+; BCD_counter:ones_counter|timer_delay[5]  ; Merged with BCD_counter:minute_counter|timer_delay[5]  ;
+; BCD_counter:tens_counter|timer_delay[5]  ; Merged with BCD_counter:minute_counter|timer_delay[5]  ;
+; BCD_counter:ones_counter|timer_delay[4]  ; Merged with BCD_counter:minute_counter|timer_delay[4]  ;
+; BCD_counter:tens_counter|timer_delay[4]  ; Merged with BCD_counter:minute_counter|timer_delay[4]  ;
+; BCD_counter:ones_counter|timer_delay[3]  ; Merged with BCD_counter:minute_counter|timer_delay[3]  ;
+; BCD_counter:tens_counter|timer_delay[3]  ; Merged with BCD_counter:minute_counter|timer_delay[3]  ;
+; BCD_counter:ones_counter|timer_delay[2]  ; Merged with BCD_counter:minute_counter|timer_delay[2]  ;
+; BCD_counter:tens_counter|timer_delay[2]  ; Merged with BCD_counter:minute_counter|timer_delay[2]  ;
+; BCD_counter:ones_counter|timer_delay[1]  ; Merged with BCD_counter:minute_counter|timer_delay[1]  ;
+; BCD_counter:tens_counter|timer_delay[1]  ; Merged with BCD_counter:minute_counter|timer_delay[1]  ;
+; BCD_counter:ones_counter|timer_delay[0]  ; Merged with BCD_counter:minute_counter|timer_delay[0]  ;
+; BCD_counter:tens_counter|timer_delay[0]  ; Merged with BCD_counter:minute_counter|timer_delay[0]  ;
+; BCD_counter:ones_counter|timer_delay[22] ; Merged with BCD_counter:minute_counter|timer_delay[22] ;
+; BCD_counter:tens_counter|timer_delay[22] ; Merged with BCD_counter:minute_counter|timer_delay[22] ;
+; BCD_counter:ones_counter|timer_delay[19] ; Merged with BCD_counter:minute_counter|timer_delay[19] ;
+; BCD_counter:tens_counter|timer_delay[19] ; Merged with BCD_counter:minute_counter|timer_delay[19] ;
+; BCD_counter:ones_counter|timer_delay[18] ; Merged with BCD_counter:minute_counter|timer_delay[18] ;
+; BCD_counter:tens_counter|timer_delay[18] ; Merged with BCD_counter:minute_counter|timer_delay[18] ;
+; BCD_counter:ones_counter|timer_delay[14] ; Merged with BCD_counter:minute_counter|timer_delay[14] ;
+; BCD_counter:tens_counter|timer_delay[14] ; Merged with BCD_counter:minute_counter|timer_delay[14] ;
+; BCD_counter:ones_counter|timer_delay[11] ; Merged with BCD_counter:minute_counter|timer_delay[11] ;
+; BCD_counter:tens_counter|timer_delay[11] ; Merged with BCD_counter:minute_counter|timer_delay[11] ;
+; BCD_counter:ones_counter|timer_delay[9]  ; Merged with BCD_counter:minute_counter|timer_delay[9]  ;
+; BCD_counter:tens_counter|timer_delay[9]  ; Merged with BCD_counter:minute_counter|timer_delay[9]  ;
+; BCD_counter:ones_counter|timer_delay[8]  ; Merged with BCD_counter:minute_counter|timer_delay[8]  ;
+; BCD_counter:tens_counter|timer_delay[8]  ; Merged with BCD_counter:minute_counter|timer_delay[8]  ;
+; BCD_counter:ones_counter|timer_delay[6]  ; Merged with BCD_counter:minute_counter|timer_delay[6]  ;
+; BCD_counter:tens_counter|timer_delay[6]  ; Merged with BCD_counter:minute_counter|timer_delay[6]  ;
+; Total Number of Removed Registers = 67   ;                                                        ;
++------------------------------------------+--------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -239,14 +325,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 19    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 51    ;
+; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Clear ; 7     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 17    ;
+; Number of registers using Clock Enable       ; 18    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; LEDR[0]~reg0                           ; 2       ;
+; minute_init                            ; 4       ;
+; tens_init                              ; 4       ;
+; ones_init                              ; 4       ;
+; Total number of inverted registers = 4 ;         ;
++----------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -254,12 +353,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |minute_counter|BCD_counter:minute_counter|count_reg[2]          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |minute_counter|BCD_counter:tens_counter|count_reg[1]            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |minute_counter|BCD_counter:ones_counter|count_reg[3]            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |minute_counter|ones_init                                        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |minute_counter|BCD_counter:minute_counter|count_reg[1]          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |minute_counter|BCD_counter:tens_counter|count_reg[0]            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |minute_counter|BCD_counter:ones_counter|count_reg[1]            ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |minute_counter|BCD_to_SevenSeg:converter_minute|SevenSeg_out[0] ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |minute_counter|BCD_to_SevenSeg:converter_tens|SevenSeg_out[3]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |minute_counter|BCD_to_SevenSeg:converter_tens|SevenSeg_out[5]   ;
 ; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |minute_counter|BCD_to_SevenSeg:converter_ones|SevenSeg_out[5]   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------+
 
@@ -269,23 +367,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 19                          ;
+; arriav_ff             ; 51                          ;
 ;     CLR               ; 1                           ;
-;     ENA               ; 14                          ;
-;     ENA CLR           ; 3                           ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 53                          ;
-;     normal            ; 53                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 4                           ;
-;         4 data inputs ; 26                          ;
-;         5 data inputs ; 9                           ;
-;         6 data inputs ; 6                           ;
+;     ENA               ; 12                          ;
+;     ENA CLR           ; 6                           ;
+;     SCLR              ; 32                          ;
+; arriav_lcell_comb     ; 115                         ;
+;     arith             ; 32                          ;
+;         1 data inputs ; 32                          ;
+;     normal            ; 83                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 14                          ;
+;         4 data inputs ; 33                          ;
+;         5 data inputs ; 7                           ;
+;         6 data inputs ; 10                          ;
 ; boundary_port         ; 46                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.79                        ;
+; Max LUT depth         ; 4.10                        ;
+; Average LUT depth     ; 2.64                        ;
 +-----------------------+-----------------------------+
 
 
@@ -304,7 +405,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Thu Apr 18 11:47:38 2024
+    Info: Processing started: Thu Apr 18 13:46:42 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off 305Lab3Quartus -c minute_counter
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -324,15 +425,33 @@ Info (12021): Found 2 design units, including 1 entities, in source file 305lab3
     Info (12022): Found design unit 1: BCD_counter-rtl File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_Counter.vhd Line: 15
     Info (12023): Found entity 1: BCD_counter File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_Counter.vhd Line: 5
 Info (12127): Elaborating entity "minute_counter" for the top level hierarchy
-Warning (10492): VHDL Process Statement warning at minute_counter.vhd(92): signal "time_out_temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 92
-Warning (10492): VHDL Process Statement warning at minute_counter.vhd(92): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 92
-Warning (10631): VHDL Process Statement warning at minute_counter.vhd(90): inferring latch(es) for signal or variable "LEDR", which holds its previous value in one or more paths through the process File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at minute_counter.vhd(94): signal "KEY" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 94
+Warning (10492): VHDL Process Statement warning at minute_counter.vhd(95): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at minute_counter.vhd(96): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at minute_counter.vhd(99): signal "SW" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 99
+Warning (10492): VHDL Process Statement warning at minute_counter.vhd(116): signal "time_out_temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at minute_counter.vhd(116): signal "data_in" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 116
+Warning (10631): VHDL Process Statement warning at minute_counter.vhd(91): inferring latch(es) for signal or variable "data_in", which holds its previous value in one or more paths through the process File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Warning (10631): VHDL Process Statement warning at minute_counter.vhd(91): inferring latch(es) for signal or variable "enable", which holds its previous value in one or more paths through the process File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
 Warning (10873): Using initial value X (don't care) for net "LEDR[9..1]" at minute_counter.vhd(13) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 13
-Info (10041): Inferred latch for "LEDR[0]" at minute_counter.vhd(90) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 90
-Info (12128): Elaborating entity "BCD_counter" for hierarchy "BCD_counter:tens_counter" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 45
-Info (12128): Elaborating entity "BCD_to_SevenSeg" for hierarchy "BCD_to_SevenSeg:converter_minute" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 72
+Info (10041): Inferred latch for "enable" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[0]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[1]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[2]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[3]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[4]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[5]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[6]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[7]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[8]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (10041): Inferred latch for "data_in[9]" at minute_counter.vhd(91) File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 91
+Info (12128): Elaborating entity "BCD_counter" for hierarchy "BCD_counter:tens_counter" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 46
+Info (12128): Elaborating entity "BCD_to_SevenSeg" for hierarchy "BCD_to_SevenSeg:converter_minute" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 73
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "minute_enable" is converted into an equivalent circuit using register "minute_enable~_emulated" and latch "minute_enable~1" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 36
+    Warning (13310): Register "tens_enable" is converted into an equivalent circuit using register "tens_enable~_emulated" and latch "minute_enable~1" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 36
+    Warning (13310): Register "ones_enable" is converted into an equivalent circuit using register "ones_enable~_emulated" and latch "minute_enable~1" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 36
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at VCC File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 90
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 13
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 13
     Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 13
@@ -580,13 +699,13 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 8
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 8
     Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd Line: 8
-Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 157 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 31 output pins
-    Info (21061): Implemented 51 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 251 warnings
-    Info: Peak virtual memory: 4910 megabytes
-    Info: Processing ended: Thu Apr 18 11:47:51 2024
+    Info (21061): Implemented 111 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 259 warnings
+    Info: Peak virtual memory: 4936 megabytes
+    Info: Processing ended: Thu Apr 18 13:46:55 2024
     Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:04
 

@@ -39,7 +39,8 @@ architecture rtl of minute_counter is
     signal minute_count, tens_count, ones_count   : std_logic_vector(3 downto 0);
     signal BCD_minute, BCD_tens, BCD_ones : std_logic_vector(3 downto 0);
     signal Seg_minute, Seg_tens, Seg_ones : std_logic_vector(6 downto 0);
-    signal time_out_temp : std_logic_vector(9 downto 0);
+    signal time_out_temp: std_logic_vector(9 downto 0);
+	 signal data_in : std_logic_vector(9 downto 0);
 
 begin
     tens_counter : BCD_counter
@@ -89,30 +90,42 @@ begin
 
     process (CLOCK_50)
     begin
-        if time_out_temp = SW then
+	 
+	 if KEY(0) = '0' then
+		data_in <= SW;
+		if unsigned(SW(3 downto 0)) > 9 then
+			data_in(3 downto 0) <= "1001";
+		end if;
+		if unsigned(SW(7 downto 4)) > 5 then
+			data_in(7 downto 4) <= "0101";
+		end if;
+		
+		
+		enable <= '1';
+      minute_init <= '1';
+      tens_init   <= '1';
+      ones_init   <= '1';
+      minute_dir  <= '0';
+      tens_dir    <= '0';
+      ones_dir    <= '0';
+      minute_enable <= '1';
+      tens_enable <= '1';
+      ones_enable <= '1';
+	 else
+	 
+    if time_out_temp = data_in then
               enable <= '0';
               minute_enable <= '0';
               tens_enable <= '0';
               ones_enable <= '0';
 				  LEDR(0) <= '1';
-	else    
-	if rising_edge(CLOCK_50) then
-            if KEY(0) = '0' then
-                enable <= '1';
-                minute_init <= '1';
-                tens_init   <= '1';
-                ones_init   <= '1';
+	 elsif rising_edge(CLOCK_50) then
+			LEDR(0) <= '0';
+			if enable = '1' then
                 minute_dir  <= '0';
                 tens_dir    <= '0';
                 ones_dir    <= '0';
-                minute_enable <= '1';
-                tens_enable <= '1';
-                ones_enable <= '1';
-            elsif enable = '1' then
-                minute_dir  <= '0';
-                tens_dir    <= '0';
-                ones_dir    <= '0';
-                  if ones_count = "1000" then
+                  if ones_count = "1001" then
                    if tens_count = "0101" then
                       if minute_count = "0011" then
                         minute_init <= '1';
@@ -147,7 +160,7 @@ begin
                   end if;
                 end if;
               end if;
-	end if;
+	 end if;
     end process;
             time_out_temp <= minute_count(1 downto 0) & tens_count & ones_count;
             HEX2 <= Seg_minute;

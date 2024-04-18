@@ -1,0 +1,279 @@
+m255
+K3
+z0
+!s11e MIXED_VERSIONS
+13
+cModel Technology
+Z0 dD:\305Lab3
+T_opt
+!s110 1713232793
+V2jC36Gg]CN_:c^YZ5hjbE1
+Z1 04 17 2 work minute_counter_tb tb 1
+=1-cc96e530f0c9-661ddb99-225-197c
+Z2 o-quiet -auto_acc_if_foreign -work work
+Z3 tCvgOpt 0
+n@_opt
+Z4 OE;O;2020.2;71
+R0
+T_opt1
+!s110 1713405117
+VZ]IMzE>Dc9zcn[S?a@a;B1
+R1
+=1-cc96e51e1e24-66207cbd-129-368c
+R2
+R3
+n@_opt1
+R4
+Ebcd_counter
+Z5 w1713400948
+Z6 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z7 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z8 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 20
+Z9 dC:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3
+Z10 8C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_Counter.vhd
+Z11 FC:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_Counter.vhd
+l0
+L5 1
+VzDL>0Z7D7DRC?Wf6GHF570
+!s100 C8_P@H9mmT9JoAiT_[fUf2
+Z12 OE;C;2020.2;71
+32
+Z13 !s110 1713404147
+!i10b 1
+Z14 !s108 1713404147.000000
+Z15 !s90 -reportprogress|300|-work|work|C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_Counter.vhd|
+Z16 !s107 C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_Counter.vhd|
+!i113 0
+Z17 o-work work
+Z18 tExplicit 1 CvgOpt 0
+Artl
+R6
+R7
+R8
+DEx4 work 11 bcd_counter 0 22 zDL>0Z7D7DRC?Wf6GHF570
+!i122 20
+l18
+L15 42
+VHTJUFH_mJZBW@:lhzdPJX2
+!s100 0n:3?5K3MQ=MaM`>m]`a43
+R12
+32
+R13
+!i10b 1
+R14
+R15
+R16
+!i113 0
+R17
+R18
+Ebcd_to_sevenseg
+Z19 w1713398028
+R6
+R7
+R8
+!i122 21
+R9
+Z20 8C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_to_7Seg.vhd
+Z21 FC:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_to_7Seg.vhd
+l0
+L8 1
+Ve4OzSaIm9F2ZzIbI5B@2^3
+!s100 l<kBHEoGP7G32bF`]N2m53
+R12
+32
+R13
+!i10b 1
+R14
+Z22 !s90 -reportprogress|300|-work|work|C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_to_7Seg.vhd|
+Z23 !s107 C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/BCD_to_7Seg.vhd|
+!i113 0
+R17
+R18
+Aarc1
+R6
+R7
+R8
+DEx4 work 15 bcd_to_sevenseg 0 22 e4OzSaIm9F2ZzIbI5B@2^3
+!i122 21
+l14
+L13 14
+VHg?Zfg^joSc9m0gLXkTWQ3
+!s100 nM_5DNH3iAFkb5MdkQC^43
+R12
+32
+R13
+!i10b 1
+R14
+R22
+R23
+!i113 0
+R17
+R18
+Eminute_counter
+Z24 w1713403677
+R6
+R7
+R8
+!i122 22
+R9
+Z25 8C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd
+Z26 FC:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd
+l0
+L5 1
+V`gE1FH]SmCf=CBncI1CL:1
+!s100 T7]G^h:VW46Q1[>m3R^9V1
+R12
+32
+R13
+!i10b 1
+R14
+Z27 !s90 -reportprogress|300|-work|work|C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd|
+Z28 !s107 C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/minute_counter.vhd|
+!i113 0
+R17
+R18
+Artl
+R6
+R7
+R8
+DEx4 work 14 minute_counter 0 22 `gE1FH]SmCf=CBncI1CL:1
+!i122 22
+l45
+L17 153
+VR686=BW=XGRgHJKnVG>]a1
+!s100 ;WiHgnPJjaQED6<DdbbAf2
+R12
+32
+R13
+!i10b 1
+R14
+R27
+R28
+!i113 0
+R17
+R18
+Eminute_counter_tb
+Z29 w1713405090
+R6
+R7
+R8
+!i122 31
+R9
+Z30 8C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd
+Z31 FC:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd
+l0
+L5 1
+VnIX5Oel0fI9]a0mOJOO;k0
+!s100 j[WiOI`>zB9Bo1zhI2nHT1
+R12
+32
+Z32 !s110 1713405109
+!i10b 1
+Z33 !s108 1713405109.000000
+Z34 !s90 -reportprogress|300|-work|work|C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd|
+Z35 !s107 C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/test_minute_counter.vhd|
+!i113 0
+R17
+R18
+Atb
+R6
+R7
+R8
+DEx4 work 17 minute_counter_tb 0 22 nIX5Oel0fI9]a0mOJOO;k0
+!i122 31
+l29
+L8 60
+Vzn7K]i1AY239;WihJi=n:2
+!s100 dCb`gkG<ETd`@8z^W@<dL1
+R12
+32
+R32
+!i10b 1
+R33
+R34
+R35
+!i113 0
+R17
+R18
+Etest_bcd_counter
+R19
+R6
+R7
+R8
+!i122 23
+R9
+Z36 8C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/test_BCD_Counter.vhd
+Z37 FC:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/test_BCD_Counter.vhd
+l0
+L5 1
+VboLLWkKkkVgzhH8U]RS3N1
+!s100 jiVFWK^ai8IYIKQVF4zcU0
+R12
+32
+R13
+!i10b 1
+R14
+Z38 !s90 -reportprogress|300|-work|work|C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/test_BCD_Counter.vhd|
+Z39 !s107 C:/Users/tmin636/OneDrive - The University of Auckland/Documents/GitHub/305Lab3/305Lab3/test_BCD_Counter.vhd|
+!i113 0
+R17
+R18
+Amy_test
+R6
+R7
+R8
+DEx4 work 16 test_bcd_counter 0 22 boLLWkKkkVgzhH8U]RS3N1
+!i122 23
+l19
+L8 30
+VHfj>JYL<dd5F9YeZjA1d43
+!s100 1WVUPSoDWKAh:SG:@@1C>3
+R12
+32
+R13
+!i10b 1
+R14
+R38
+R39
+!i113 0
+R17
+R18
+Etest_minute_counter
+w1712448904
+Z40 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z41 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z42 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+R0
+Z43 8D:/305Lab3/test_minute_counter.vhd
+Z44 FD:/305Lab3/test_minute_counter.vhd
+l0
+L5
+V:UF`W<RGHjF9U?:HMXC9l0
+Z45 OV;C;10.1d;51
+32
+Z46 !s90 -reportprogress|300|-work|work|D:/305Lab3/test_minute_counter.vhd|
+Z47 !s107 D:/305Lab3/test_minute_counter.vhd|
+Z48 o-work work -O0
+Z49 tExplicit 1
+!s108 1712448911.722000
+!s100 BCMlUK3ASN3ac90?oJD3i0
+!i10b 1
+Atb
+R40
+R41
+R42
+DEx4 work 19 test_minute_counter 0 22 :UF`W<RGHjF9U?:HMXC9l0
+l29
+L8
+ViKlaeXBJTRbR=gVBg0[L]3
+R45
+32
+R46
+R47
+R48
+R49
+w1712352400
+!s108 1712352473.795000
+!s100 V6Ke08lThIA_d;fQ8Y7YH2
+!i10b 1
